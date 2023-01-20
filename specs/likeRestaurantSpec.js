@@ -57,12 +57,13 @@ describe('Liking A Restaurant', () => {
     FavoriteRestaurantIdb.deleteRestaurant(1);
   });
 
-  xit('should not add a restaurant when it has no id', async () => {
+  it('should not add a restaurant when it has no id', async () => {
     await LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: {},
     });
-    document.querySelector('#favButton-').dispatchEvent(new Event('click'));
+    // #favButton-undefined because the pattern is favButton-{id} and the test id is undefined
+    document.querySelector('#favButton-undefined').dispatchEvent(new Event('click'));
     expect(await FavoriteRestaurantIdb.getAllRestaurants()).toEqual([]);
   });
 });
