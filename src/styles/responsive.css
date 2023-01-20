@@ -1,0 +1,91 @@
+.navbar {
+  max-width: 1440px;
+}
+@media screen and (min-width: 500px) {
+  .navbar-toggler {
+    display: none;
+  }
+
+    .navbar-nav {
+      flex-direction: row;
+      margin-right: 24px;
+    }
+
+    .nav-item {
+      margin-right: 16px;
+    }
+}
+
+@media screen and (max-width: 499px) {
+  .navbar-collapse {
+    z-index: 10;
+    width: 100vw;
+    background-color: #082032;
+    position: absolute;
+    display: block;
+    top: 48.5px;
+    /* This trasform moves the drawer off canvas. */
+    -webkit-transform: translate(-100vw, 0);
+    transform: translate(-100vw, 0);
+
+    /* Optionally, we animate the drawer. */
+    transition: transform 0.3s ease;
+    padding-right: 25px;
+  }
+
+  .open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  .navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+  }
+
+  .nav-link {
+    text-align: end;
+  }
+
+}
+
+@media screen and (min-width: 700px) {
+  #partners {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+  }
+
+    #customerReview .card {
+      min-width: 50%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+  #partners {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+    #customerReview .card {
+      min-width: 33.33%;
+    }
+}
+
+
+@media screen and (min-width:1440px) {
+  .navbar{
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
