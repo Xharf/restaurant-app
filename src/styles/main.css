@@ -87,7 +87,7 @@ nav {
   min-height: 380px;
   width: 100%;
   text-align: center;
-  background-image: url(../public/images/heros/hero-image_4.jpg);
+  background-image: url(../public/images/resized/heros/hero-image_4-small.jpg);
   background-position: center;
   background-size: cover;
   background-color: green;
@@ -255,7 +255,7 @@ footer {
 #detailHero {
   position: relative;
 }
-#detailHero > img {
+#detailHero > picture > img {
   max-height: 230px;
   min-width: 100%;
   object-fit: cover;

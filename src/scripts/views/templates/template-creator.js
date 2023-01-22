@@ -2,6 +2,8 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable no-plusplus */
 import CONFIG from '../../globals/config';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const buildRating = (rating) => {
   let ratingElement = '';
@@ -58,11 +60,14 @@ const createRestaurantItemTemplate = (restaurant) => `
        data-menus="${restaurant.menus}" 
        data-reviews="${restaurant.reviews}"
       ></div>
-      <img
-        src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}"
-        alt="${restaurant.name}"
-        class="partner-item-thumbnail"
-      />
+      <picture>
+        <source media="(max-width: 600px)" class="lazyload" data-srcset="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" />
+        <img
+          data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}"
+          alt="${restaurant.name}"
+          class="partner-item-thumbnail lazyload"
+        />
+      </picture>
     </div>
     <div class="partner-item-content">
       <p class="partner-item-rating text-orange">
@@ -89,7 +94,10 @@ const createRestaurantDetailTemplate = (restaurant) => `
       </svg>
     </a>
     <div id="favButtonContainer"></div>
-    <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" />
+    <picture>
+      <source media="(max-width: 600px)" class="lazyload" data-srcset="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" />
+      <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" />
+    </picture>
   </div>
   <article id="detailContent">
     <p class="partner-item-rating text-orange">${buildRating(restaurant.rating)}</p>

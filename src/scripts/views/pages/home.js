@@ -26,7 +26,7 @@ const Detail = {
 
     const restaurants = await RestaurantSource.listRestaurants();
     if (restaurants.length === 0) {
-      document.querySelector('#partners').innerHTML = '<h1>Belum ada favorit</h1>';
+      document.querySelector('#partners').innerHTML = '<h1>Belum ada restaurant</h1>';
       return;
     }
     restaurants.forEach((restaurant) => {
