@@ -44,6 +44,8 @@ module.exports = merge(common, {
       },
     ],
   },
+  // Uncomment this to see the bundle size, 
+  // this commented due to causing stopper on deploying process
   // plugins: [
   //   new BundleAnalyzerPlugin(),
   // ]
