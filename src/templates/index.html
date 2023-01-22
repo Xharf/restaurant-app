@@ -18,9 +18,19 @@
     </button>
     <header>
       <nav class="navbar">
-        <brand class="navbar-brand">
-          <img src="../images/logo/waffn logo.png" alt="Logo brand" />
-        </brand>
+        <picture class="navbar-brand">
+          <source
+            media="(max-width:700px)"
+            srcset="../images/resized/logo/waffn logo-small.jpg"
+            alt="Logo brand"
+            class="lazyload"
+          />
+          <img
+            src="../images/resized/logo/waffn logo-large.jpg"
+            alt="Logo brand"
+            class="lazyload"
+          />
+        </picture>
         <button id="hamburgerButton" class="navbar-toggler">☰</button>
         <div id="navigationDrawer" class="navbar-collapse">
           <ul class="navbar-nav">

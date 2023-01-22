@@ -15,7 +15,7 @@ const Favorite = {
   async afterRender() {
     const restaurants = await FavoriteMovieIdb.getAllRestaurants();
     if (restaurants.length === 0) {
-      document.querySelector('#partners').innerHTML = '<h1>Belum ada favorit</h1>';
+      document.querySelector('#partners').innerHTML = '<h1 id="favoriteNotFound">Belum ada favorit</h1>';
       return;
     }
     const partnersContainer = document.querySelector('#partners');
